@@ -18,6 +18,11 @@ enum ContactListSections: CaseIterable {
 
 final class ContactListPresenter: NSObject {
     
+    private enum Constants {
+        static let favoriteContactsHeaderTitle = "FAVORITE CONTACTS"
+        static let unfavoriteContactsHeaderTitle = "OTHER CONTACTS"
+    }
+    
     private var contacts: [Contact] = [] {
         didSet {
             let favorites = contacts.filter { $0.isFavorite }
@@ -68,6 +73,11 @@ extension ContactListPresenter: UITableViewDataSource {
         case .unfavorite:
             return configureUnfavoriteContactsCell(tableView: tableView, indexPath: indexPath)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = sections[section]
+        return section == .favorite ? Constants.favoriteContactsHeaderTitle : Constants.unfavoriteContactsHeaderTitle
     }
     
     private func configureFavoriteContactsCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {

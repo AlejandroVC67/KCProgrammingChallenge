@@ -25,7 +25,7 @@ final class ContactListTableViewController: UITableViewController {
     
     private func setupTableView() {
         tableView.dataSource = presenter
-        tableView.allowsMultipleSelection = false
+        tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
         tableView.estimatedRowHeight = UITableView.automaticDimension
     }
