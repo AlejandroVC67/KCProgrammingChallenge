@@ -21,6 +21,7 @@
 		BC3E3CAE26966E5600A3D9AF /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CAD26966E5600A3D9AF /* ServiceError.swift */; };
 		BC3E3CB026966E7D00A3D9AF /* ServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CAF26966E7D00A3D9AF /* ServiceFacade.swift */; };
 		BC3E3CB226966FB700A3D9AF /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CB126966FB700A3D9AF /* HTTPMethods.swift */; };
+		BC3E3CB4269670F200A3D9AF /* ContactListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CB3269670F200A3D9AF /* ContactListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		BC3E3CAD26966E5600A3D9AF /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		BC3E3CAF26966E7D00A3D9AF /* ServiceFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacade.swift; sourceTree = "<group>"; };
 		BC3E3CB126966FB700A3D9AF /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		BC3E3CB3269670F200A3D9AF /* ContactListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				BC3E3C732696687300A3D9AF /* ContactListTableViewController.swift */,
+				BC3E3CB3269670F200A3D9AF /* ContactListPresenter.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				BC3E3C742696687300A3D9AF /* ContactListTableViewController.swift in Sources */,
 				BC3E3CB026966E7D00A3D9AF /* ServiceFacade.swift in Sources */,
 				BC3E3CAC26966E1800A3D9AF /* ServiceRepository.swift in Sources */,
+				BC3E3CB4269670F200A3D9AF /* ContactListPresenter.swift in Sources */,
 				BC3E3C702696687300A3D9AF /* AppDelegate.swift in Sources */,
 				BC3E3CA726966C2800A3D9AF /* Country.swift in Sources */,
 				BC3E3CAE26966E5600A3D9AF /* ServiceError.swift in Sources */,

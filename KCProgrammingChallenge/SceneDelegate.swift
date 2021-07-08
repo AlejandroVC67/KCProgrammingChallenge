@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         self.window = UIWindow(windowScene: scene)
-        let navigationController = UINavigationController.init(rootViewController: ContactListTableViewController())
+        let presenter = ContactListPresenter()
+        let navigationController = UINavigationController.init(rootViewController: ContactListTableViewController(presenter: presenter))
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
