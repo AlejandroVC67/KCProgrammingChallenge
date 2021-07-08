@@ -22,6 +22,10 @@
 		BC3E3CB026966E7D00A3D9AF /* ServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CAF26966E7D00A3D9AF /* ServiceFacade.swift */; };
 		BC3E3CB226966FB700A3D9AF /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CB126966FB700A3D9AF /* HTTPMethods.swift */; };
 		BC3E3CB4269670F200A3D9AF /* ContactListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CB3269670F200A3D9AF /* ContactListPresenter.swift */; };
+		BC3E3CB62696B36A00A3D9AF /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CB52696B36A00A3D9AF /* ContactListTableViewCell.swift */; };
+		BC3E3CB92696B3A900A3D9AF /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CB82696B3A900A3D9AF /* UITableViewCellExtension.swift */; };
+		BC3E3CBB2696B64000A3D9AF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CBA2696B64000A3D9AF /* UIColorExtension.swift */; };
+		BC3E3CBD2696B96100A3D9AF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CBC2696B96100A3D9AF /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		BC3E3CAF26966E7D00A3D9AF /* ServiceFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacade.swift; sourceTree = "<group>"; };
 		BC3E3CB126966FB700A3D9AF /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		BC3E3CB3269670F200A3D9AF /* ContactListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListPresenter.swift; sourceTree = "<group>"; };
+		BC3E3CB52696B36A00A3D9AF /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewCell.swift; sourceTree = "<group>"; };
+		BC3E3CB82696B3A900A3D9AF /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		BC3E3CBA2696B64000A3D9AF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		BC3E3CBC2696B96100A3D9AF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 		BC3E3C6E2696687300A3D9AF /* KCProgrammingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				BC3E3CB72696B39100A3D9AF /* Extensions */,
 				BC3E3CAA26966E0A00A3D9AF /* Service */,
 				BC3E3CA126966B2500A3D9AF /* Models */,
 				BC3E3C9F26966B0A00A3D9AF /* Screens */,
@@ -145,6 +154,7 @@
 			children = (
 				BC3E3C732696687300A3D9AF /* ContactListTableViewController.swift */,
 				BC3E3CB3269670F200A3D9AF /* ContactListPresenter.swift */,
+				BC3E3CB52696B36A00A3D9AF /* ContactListTableViewCell.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -169,6 +179,16 @@
 				BC3E3CB126966FB700A3D9AF /* HTTPMethods.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BC3E3CB72696B39100A3D9AF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC3E3CB82696B3A900A3D9AF /* UITableViewCellExtension.swift */,
+				BC3E3CBA2696B64000A3D9AF /* UIColorExtension.swift */,
+				BC3E3CBC2696B96100A3D9AF /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,15 +322,19 @@
 			files = (
 				BC3E3CA526966C1000A3D9AF /* Phone.swift in Sources */,
 				BC3E3CA326966B2F00A3D9AF /* Contact.swift in Sources */,
+				BC3E3CBB2696B64000A3D9AF /* UIColorExtension.swift in Sources */,
 				BC3E3C742696687300A3D9AF /* ContactListTableViewController.swift in Sources */,
 				BC3E3CB026966E7D00A3D9AF /* ServiceFacade.swift in Sources */,
 				BC3E3CAC26966E1800A3D9AF /* ServiceRepository.swift in Sources */,
+				BC3E3CBD2696B96100A3D9AF /* UIViewExtension.swift in Sources */,
 				BC3E3CB4269670F200A3D9AF /* ContactListPresenter.swift in Sources */,
 				BC3E3C702696687300A3D9AF /* AppDelegate.swift in Sources */,
 				BC3E3CA726966C2800A3D9AF /* Country.swift in Sources */,
 				BC3E3CAE26966E5600A3D9AF /* ServiceError.swift in Sources */,
 				BC3E3C722696687300A3D9AF /* SceneDelegate.swift in Sources */,
 				BC3E3CA926966C4800A3D9AF /* Address.swift in Sources */,
+				BC3E3CB92696B3A900A3D9AF /* UITableViewCellExtension.swift in Sources */,
+				BC3E3CB62696B36A00A3D9AF /* ContactListTableViewCell.swift in Sources */,
 				BC3E3CB226966FB700A3D9AF /* HTTPMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ServiceFacade: ServiceRepository {    
+struct ServiceFacade: ServiceRepository {
     private enum Constants {
         static let baseUrl = "https://s3.amazonaws.com/technical-challenge/v3/contacts.json"
     }

@@ -8,14 +8,16 @@
 import UIKit
 
 final class ContactListTableViewController: UITableViewController {
-
+    // MARK: - Variables
     private let presenter: ContactListPresenter
     
+    //MARK: - Init
     init(presenter: ContactListPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         self.presenter.delegate = self
         setupTableView()
+        setupView()
         loadContacts()
     }
     
@@ -23,11 +25,18 @@ final class ContactListTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private functions
+    private func setupView() {
+        title = "Contacts"
+    }
+    
     private func setupTableView() {
+        tableView.backgroundColor = .background
         tableView.dataSource = presenter
         tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.register(ContactListTableViewCell.self, forCellReuseIdentifier: ContactListTableViewCell.reuseIdentifier)
     }
     
     private func loadContacts() {
@@ -35,6 +44,7 @@ final class ContactListTableViewController: UITableViewController {
     }
 }
 
+//MARK: - ContactListDelegate Extension
 extension ContactListTableViewController: ContactListDelegate {
     func reloadData() {
         DispatchQueue.main.async {

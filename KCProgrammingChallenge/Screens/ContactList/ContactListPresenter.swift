@@ -17,12 +17,13 @@ enum ContactListSections: CaseIterable {
 }
 
 final class ContactListPresenter: NSObject {
-    
+    // MARK: - Constants
     private enum Constants {
         static let favoriteContactsHeaderTitle = "FAVORITE CONTACTS"
         static let unfavoriteContactsHeaderTitle = "OTHER CONTACTS"
     }
     
+    // MARK: - Variables
     private var contacts: [Contact] = [] {
         didSet {
             let favorites = contacts.filter { $0.isFavorite }
@@ -38,6 +39,7 @@ final class ContactListPresenter: NSObject {
     private let sections: [ContactListSections] = ContactListSections.allCases
     weak var delegate: ContactListDelegate?
     
+    // MARK: - Functions
     func getContacts() {
         ServiceFacade.getContacts { [weak self] response in
             switch response {
@@ -50,9 +52,10 @@ final class ContactListPresenter: NSObject {
     }
 }
 
+//MARK: - UITableViewDataSource Extension
 extension ContactListPresenter: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,15 +85,20 @@ extension ContactListPresenter: UITableViewDataSource {
     
     private func configureFavoriteContactsCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let contact = favoriteContacts[indexPath.row]
-        let cell = UITableViewCell()
-        cell.textLabel?.text = contact.name
-        return cell
+        return getContactsCell(tableView: tableView, indexPath: indexPath, contact: contact)
     }
     
     private func configureUnfavoriteContactsCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let contact = unfavoriteContacts[indexPath.row]
-        let cell = UITableViewCell()
-        cell.textLabel?.text = contact.name
+        return getContactsCell(tableView: tableView, indexPath: indexPath, contact: contact)
+    }
+    
+    private func getContactsCell(tableView: UITableView, indexPath: IndexPath, contact: Contact) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactListTableViewCell.reuseIdentifier, for: indexPath) as? ContactListTableViewCell else {
+            return UITableViewCell()
+        }
+        let thubmnailURL = URL(string: contact.smallImageURL)
+        cell.configureCell(name: contact.name, company: contact.companyName, isFavorite: contact.isFavorite, thumbnailURL: thubmnailURL)
         return cell
     }
 }
