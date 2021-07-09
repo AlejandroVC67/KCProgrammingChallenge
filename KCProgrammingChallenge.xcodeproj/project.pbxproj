@@ -12,6 +12,7 @@
 		BC139B7A2698092000DD98E4 /* ContactDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B792698092000DD98E4 /* ContactDetailPresenter.swift */; };
 		BC139B7C2698097A00DD98E4 /* ContactListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B7B2698097A00DD98E4 /* ContactListDelegate.swift */; };
 		BC139B7E2698098E00DD98E4 /* ContactListSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B7D2698098E00DD98E4 /* ContactListSections.swift */; };
+		BC139B8026980E4F00DD98E4 /* ContactDetailSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B7F26980E4F00DD98E4 /* ContactDetailSections.swift */; };
 		BC3E3C702696687300A3D9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C6F2696687300A3D9AF /* AppDelegate.swift */; };
 		BC3E3C722696687300A3D9AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C712696687300A3D9AF /* SceneDelegate.swift */; };
 		BC3E3C742696687300A3D9AF /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C732696687300A3D9AF /* ContactListTableViewController.swift */; };
@@ -56,6 +57,7 @@
 		BC139B792698092000DD98E4 /* ContactDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailPresenter.swift; sourceTree = "<group>"; };
 		BC139B7B2698097A00DD98E4 /* ContactListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListDelegate.swift; sourceTree = "<group>"; };
 		BC139B7D2698098E00DD98E4 /* ContactListSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListSections.swift; sourceTree = "<group>"; };
+		BC139B7F26980E4F00DD98E4 /* ContactDetailSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailSections.swift; sourceTree = "<group>"; };
 		BC3E3C6C2696687300A3D9AF /* KCProgrammingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCProgrammingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3E3C6F2696687300A3D9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC3E3C712696687300A3D9AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				BC139B77269808AF00DD98E4 /* ContactDetailTableViewController.swift */,
 				BC139B792698092000DD98E4 /* ContactDetailPresenter.swift */,
+				BC139B7F26980E4F00DD98E4 /* ContactDetailSections.swift */,
 			);
 			path = ContactDetail;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				BC3E3CAC26966E1800A3D9AF /* ServiceRepository.swift in Sources */,
 				BC3E3CBD2696B96100A3D9AF /* UIViewExtension.swift in Sources */,
 				BC3E3CB4269670F200A3D9AF /* ContactListPresenter.swift in Sources */,
+				BC139B8026980E4F00DD98E4 /* ContactDetailSections.swift in Sources */,
 				BC3E3C702696687300A3D9AF /* AppDelegate.swift in Sources */,
 				BC139B78269808AF00DD98E4 /* ContactDetailTableViewController.swift in Sources */,
 				BC3E3CA726966C2800A3D9AF /* Country.swift in Sources */,
