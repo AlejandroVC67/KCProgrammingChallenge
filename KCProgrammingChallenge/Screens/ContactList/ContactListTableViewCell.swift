@@ -69,6 +69,7 @@ final class ContactListTableViewCell: UITableViewCell {
     
     //MARK: - Internal function
     func configureCell(name: String, company: String?, isFavorite: Bool, thumbnailPath: String) {
+        selectionStyle = .none
         populateCell(name: name, company: company, isFavorite: isFavorite, thumbnailPath: thumbnailPath)
         addContent(isFavorite: isFavorite)
     }
@@ -76,14 +77,8 @@ final class ContactListTableViewCell: UITableViewCell {
     // MARK: - Private functions
     private func populateCell(name: String, company: String?, isFavorite: Bool, thumbnailPath: String) {
         nameLabel.text = name
-        companyLabel.text = company ?? ""
-        ServiceFacade.downloadImage(from: thumbnailPath) { [weak self] image in
-            if let image = image {
-                DispatchQueue.main.async {
-                    self?.thumbnailImageView.image = image
-                }
-            }
-        }
+        companyLabel.text = company
+        thumbnailImageView.downloadImage(from: thumbnailPath)
     }
     
     private func addContent(isFavorite: Bool) {

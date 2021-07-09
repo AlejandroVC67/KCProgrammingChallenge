@@ -2,7 +2,7 @@
 //  KCProgrammingChallengeTests.swift
 //  KCProgrammingChallengeTests
 //
-//  Created by Alejandro Villa Cardenas - Ceiba Software on 7/07/21.
+//  Created by Alejandro Villa Cardenas
 //
 
 import XCTest

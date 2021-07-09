@@ -15,4 +15,23 @@ extension UIImageView {
         }
         return image.size.height / image.size.width
     }
+    
+    func downloadImage(from path: String) {
+        guard let url = URL(string: path) else {
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethods.get.rawValue
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, _, _) in
+            guard let data = data,
+                  let image = UIImage(data: data) else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.image = image
+            }
+        }
+        task.resume()
+    }
 }

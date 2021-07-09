@@ -10,6 +10,7 @@ import UIKit
 protocol ContactListDelegate: AnyObject {
     func reloadData()
     func handleError(_ error: ServiceError)
+    func handleSelection(of contact: Contact)
 }
 
 enum ContactListSections: CaseIterable {
@@ -97,7 +98,24 @@ extension ContactListPresenter: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactListTableViewCell.reuseIdentifier, for: indexPath) as? ContactListTableViewCell else {
             return UITableViewCell()
         }
-        cell.configureCell(name: contact.name, company: contact.companyName, isFavorite: contact.isFavorite, thumbnailPath: contact.smallImageURL)
+        
+        let company = contact.companyName ?? ""
+        cell.configureCell(name: contact.name, company: company, isFavorite: contact.isFavorite, thumbnailPath: contact.smallImageURL)
         return cell
+    }
+}
+
+//MARK: - UITableViewDelegate Extension
+extension ContactListPresenter: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = sections[indexPath.section]
+        var contact: Contact
+        switch section {
+        case .favorite:
+            contact = favoriteContacts[indexPath.row]
+        case .unfavorite:
+            contact = unfavoriteContacts[indexPath.row]
+        }
+        delegate?.handleSelection(of: contact)
     }
 }

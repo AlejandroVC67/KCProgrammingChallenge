@@ -33,7 +33,7 @@ final class ContactListTableViewController: UITableViewController {
     private func setupTableView() {
         tableView.backgroundColor = .background
         tableView.dataSource = presenter
-        tableView.allowsSelection = false
+        tableView.delegate = presenter
         tableView.showsVerticalScrollIndicator = false
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(ContactListTableViewCell.self, forCellReuseIdentifier: ContactListTableViewCell.reuseIdentifier)
@@ -46,6 +46,10 @@ final class ContactListTableViewController: UITableViewController {
 
 //MARK: - ContactListDelegate Extension
 extension ContactListTableViewController: ContactListDelegate {
+    func handleSelection(of contact: Contact) {
+        // 
+    }
+    
     func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
