@@ -40,12 +40,14 @@ final class ContactListTableViewCell: UITableViewCell {
     private lazy var thumbnailImageView: UIImageView = {
         let imageView = UIImageView(image: Constants.ThumbnailImageView.image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     private lazy var starImageView: UIImageView = {
         let imageView = UIImageView(image: Constants.StarImageView.image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -95,7 +97,7 @@ final class ContactListTableViewCell: UITableViewCell {
     
     private func setupThumbnailImageViewConstraints() {
         let constraints = [thumbnailImageView.widthAnchor.constraint(equalToConstant: Constants.ThumbnailImageView.dimensions),
-                           thumbnailImageView.heightAnchor.constraint(equalToConstant: Constants.ThumbnailImageView.dimensions),
+                           thumbnailImageView.heightAnchor.constraint(equalTo: thumbnailImageView.widthAnchor, multiplier: thumbnailImageView.aspectRatio),
                            thumbnailImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
                            thumbnailImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.ThumbnailImageView.padding.left),
                            thumbnailImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: Constants.ThumbnailImageView.padding.top),
