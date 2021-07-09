@@ -7,16 +7,6 @@
 
 import UIKit
 
-protocol ContactListDelegate: AnyObject {
-    func reloadData()
-    func handleError(_ error: ServiceError)
-    func handleSelection(of contact: Contact)
-}
-
-enum ContactListSections: CaseIterable {
-    case favorite, unfavorite
-}
-
 final class ContactListPresenter: NSObject {
     // MARK: - Constants
     private enum Constants {

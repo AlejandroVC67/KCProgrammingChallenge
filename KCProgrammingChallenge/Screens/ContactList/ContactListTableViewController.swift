@@ -47,7 +47,9 @@ final class ContactListTableViewController: UITableViewController {
 //MARK: - ContactListDelegate Extension
 extension ContactListTableViewController: ContactListDelegate {
     func handleSelection(of contact: Contact) {
-        // 
+        let presenter = ContactDetailPresenter(contact: contact)
+        let contactDetailViewController = ContactDetailTableViewController(presenter: presenter)
+        navigationController?.pushViewController(contactDetailViewController, animated: true)
     }
     
     func reloadData() {

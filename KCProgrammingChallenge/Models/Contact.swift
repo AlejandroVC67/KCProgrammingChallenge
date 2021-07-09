@@ -11,7 +11,7 @@ struct Contact: Codable {
     let name: String
     let id: String
     let companyName: String?
-    let isFavorite: Bool
+    var isFavorite: Bool
     let smallImageURL: String
     let largeImageURL: String
     let emailAddress: String
