@@ -97,8 +97,7 @@ extension ContactListPresenter: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactListTableViewCell.reuseIdentifier, for: indexPath) as? ContactListTableViewCell else {
             return UITableViewCell()
         }
-        let thubmnailURL = URL(string: contact.smallImageURL)
-        cell.configureCell(name: contact.name, company: contact.companyName, isFavorite: contact.isFavorite, thumbnailURL: thubmnailURL)
+        cell.configureCell(name: contact.name, company: contact.companyName, isFavorite: contact.isFavorite, thumbnailPath: contact.smallImageURL)
         return cell
     }
 }

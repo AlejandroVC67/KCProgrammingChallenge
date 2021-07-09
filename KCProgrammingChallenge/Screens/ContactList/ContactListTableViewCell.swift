@@ -18,7 +18,7 @@ final class ContactListTableViewCell: UITableViewCell {
         }
         
         enum StarImageView {
-            static let padding: UIEdgeInsets = .init(top: 12, left: 16, bottom: 0, right: 0)
+            static let padding: UIEdgeInsets = .init(top: 8, left: 16, bottom: 0, right: 0)
             static let dimensions: CGFloat = 20
             static let image = UIImage(named: "favoriteStar")
         }
@@ -66,13 +66,24 @@ final class ContactListTableViewCell: UITableViewCell {
     }()
     
     //MARK: - Internal function
-    func configureCell(name: String, company: String?, isFavorite: Bool, thumbnailURL: URL?) {
-        nameLabel.text = name
-        companyLabel.text = company ?? ""
+    func configureCell(name: String, company: String?, isFavorite: Bool, thumbnailPath: String) {
+        populateCell(name: name, company: company, isFavorite: isFavorite, thumbnailPath: thumbnailPath)
         addContent(isFavorite: isFavorite)
     }
     
     // MARK: - Private functions
+    private func populateCell(name: String, company: String?, isFavorite: Bool, thumbnailPath: String) {
+        nameLabel.text = name
+        companyLabel.text = company ?? ""
+        ServiceFacade.downloadImage(from: thumbnailPath) { [weak self] image in
+            if let image = image {
+                DispatchQueue.main.async {
+                    self?.thumbnailImageView.image = image
+                }
+            }
+        }
+    }
+    
     private func addContent(isFavorite: Bool) {
         contentView.addSubviews([thumbnailImageView, nameLabel, companyLabel, starImageView])
         starImageView.isHidden = !isFavorite
@@ -87,8 +98,8 @@ final class ContactListTableViewCell: UITableViewCell {
                            thumbnailImageView.heightAnchor.constraint(equalToConstant: Constants.ThumbnailImageView.dimensions),
                            thumbnailImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
                            thumbnailImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.ThumbnailImageView.padding.left),
-                           thumbnailImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.ThumbnailImageView.padding.top),
-                           thumbnailImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.ThumbnailImageView.padding.bottom)
+                           thumbnailImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: Constants.ThumbnailImageView.padding.top),
+                           thumbnailImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: Constants.ThumbnailImageView.padding.bottom)
         ]
         
         NSLayoutConstraint.activate(constraints)

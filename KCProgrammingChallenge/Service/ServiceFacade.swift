@@ -5,7 +5,7 @@
 //  Created by Alejandro Villa Cardenas
 //
 
-import Foundation
+import UIKit
 
 struct ServiceFacade: ServiceRepository {
     private enum Constants {
@@ -33,6 +33,25 @@ struct ServiceFacade: ServiceRepository {
                 print(error)
                 completion(.failure(.unableToParse))
             }
+        }
+        task.resume()
+    }
+    
+    static func downloadImage(from path: String, completion: @escaping ((UIImage?) -> Void)) {
+        guard let url = URL(string: path) else {
+            completion(nil)
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethods.get.rawValue
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, _, _) in
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            let image = UIImage(data: data)
+            completion(image)
         }
         task.resume()
     }
