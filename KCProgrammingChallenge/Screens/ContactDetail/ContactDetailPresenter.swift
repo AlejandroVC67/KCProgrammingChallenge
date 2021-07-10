@@ -24,7 +24,7 @@ final class ContactDetailPresenter: NSObject {
     init(contact: Contact) {
         self.contact = contact
         super.init()
-        setupSections()
+//        setupSections()
     }
     
     //MARK: - Internal functions
@@ -62,6 +62,22 @@ extension ContactDetailPresenter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let section = sections[indexPath.section]
+        switch section {
+        case .summary:
+            return configureDetailSummaryCell(tableView, indexPath: indexPath)
+        default:
+            print("cosita")
+        }
         return UITableViewCell()
+    }
+    
+    private func configureDetailSummaryCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactDetailSummaryTableViewCell.reuseIdentifier) as? ContactDetailSummaryTableViewCell else {
+            return UITableViewCell()
+        }
+        let company = contact.companyName ?? ""
+        cell.configureCell(name: contact.name, company: company, profileImagePath: contact.largeImageURL)
+        return cell
     }
 }

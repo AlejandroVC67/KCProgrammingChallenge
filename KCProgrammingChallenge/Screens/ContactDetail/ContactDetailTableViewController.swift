@@ -28,7 +28,9 @@ final class ContactDetailTableViewController: UITableViewController {
         tableView.backgroundColor = .background
         tableView.dataSource = presenter
         tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.register(ContactDetailSummaryTableViewCell.self, forCellReuseIdentifier: ContactDetailSummaryTableViewCell.reuseIdentifier)
     }
     
     private func setupNavbar() {
