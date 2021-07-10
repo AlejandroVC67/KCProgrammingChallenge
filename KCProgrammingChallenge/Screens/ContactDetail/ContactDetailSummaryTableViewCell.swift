@@ -8,7 +8,7 @@
 import UIKit
 
 final class ContactDetailSummaryTableViewCell: UITableViewCell {
-    
+    // MARK: - Constants
     private enum Constants {
         enum ProfileImageView {
             static let placeholderImage = UIImage(named: "contactProfilePlaceholder")
@@ -35,6 +35,7 @@ final class ContactDetailSummaryTableViewCell: UITableViewCell {
         }
     }
     
+    //MARK: - Variables
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView(image: Constants.ProfileImageView.placeholderImage)
         imageView.clipsToBounds = true
@@ -62,6 +63,7 @@ final class ContactDetailSummaryTableViewCell: UITableViewCell {
     
     private let separatorLine = SeparatorLineView()
     
+    //MARK: - Internal Function
     func configureCell(name: String, company: String, profileImagePath: String) {
         profileImageView.downloadImage(from: profileImagePath)
         nameLabel.text = name
@@ -69,6 +71,7 @@ final class ContactDetailSummaryTableViewCell: UITableViewCell {
         addContent()
     }
     
+    //MARK: - Private functions
     private func addContent() {
         contentView.addSubviews([nameLabel, companyLabel, profileImageView, separatorLine])
         profileImageViewConstraints()

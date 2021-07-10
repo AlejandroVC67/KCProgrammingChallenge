@@ -8,7 +8,7 @@
 import UIKit
 
 final class ContactDetailItemTableViewCell: UITableViewCell {
-    
+    //MARK: - Constants
     private enum Constants {
         enum TitleLabel {
             static let padding: UIEdgeInsets = .init(top: 20, left: 10, bottom: 0, right: 0)
@@ -34,6 +34,7 @@ final class ContactDetailItemTableViewCell: UITableViewCell {
         }
     }
     
+    //MARK: - Variables
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = Constants.TitleLabel.textColor
@@ -61,6 +62,7 @@ final class ContactDetailItemTableViewCell: UITableViewCell {
     
     private let separatorLine = SeparatorLineView()
     
+    //MARK: - Internal Function
     func configureCell(title: String, information: String, hint: String? = nil) {
         titleLabel.text = title
         informationLabel.text = information
@@ -69,6 +71,7 @@ final class ContactDetailItemTableViewCell: UITableViewCell {
         addContent()
     }
     
+    //MARK: - Private Functions
     private func addContent() {
         contentView.addSubviews([titleLabel, informationLabel, hintLabel, separatorLine])
         
