@@ -41,6 +41,11 @@ final class ContactListPresenter: NSObject {
             }
         }
     }
+    
+    func updateList(contact: Contact) {
+        contacts.removeAll(where: { $0.id == contact.id })
+        contacts.append(contact)
+    }
 }
 
 //MARK: - UITableViewDataSource Extension

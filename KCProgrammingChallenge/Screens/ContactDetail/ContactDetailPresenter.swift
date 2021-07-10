@@ -17,7 +17,7 @@ final class ContactDetailPresenter: NSObject {
     }
     
     // MARK: - Variables
-    private var contact: Contact
+    private(set) var contact: Contact
     private var sections: [ContactDetailSections] = [.summary]
     
     // MARK: - Init

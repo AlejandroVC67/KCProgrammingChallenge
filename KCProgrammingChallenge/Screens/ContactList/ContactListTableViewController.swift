@@ -49,7 +49,7 @@ final class ContactListTableViewController: UITableViewController {
 extension ContactListTableViewController: ContactListDelegate {
     func handleSelection(of contact: Contact) {
         let presenter = ContactDetailPresenter(contact: contact)
-        let contactDetailViewController = ContactDetailTableViewController(presenter: presenter)
+        let contactDetailViewController = ContactDetailTableViewController(presenter: presenter, updateListCompletion: self.presenter.updateList(contact:))
         navigationController?.pushViewController(contactDetailViewController, animated: true)
     }
     

@@ -10,10 +10,11 @@ import UIKit
 final class ContactDetailTableViewController: UITableViewController {    
     // MARK: - Variables
     private let presenter: ContactDetailPresenter
-    
+    private let updateListCompletion: ((_ contact: Contact) -> Void)
     //MARK: - Init
-    init(presenter: ContactDetailPresenter) {
+    init(presenter: ContactDetailPresenter, updateListCompletion: @escaping (_ contact: Contact) -> Void) {
         self.presenter = presenter
+        self.updateListCompletion = updateListCompletion
         super.init(nibName: nil, bundle: nil)
         setupTableView()
         setupNavbar()
@@ -43,5 +44,6 @@ final class ContactDetailTableViewController: UITableViewController {
     @objc private func handleUserTappingStar() {
         presenter.updateContactFavoriteStatus()
         setupNavbar()
+        updateListCompletion(presenter.contact)
     }
 }

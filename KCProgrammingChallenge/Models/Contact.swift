@@ -33,5 +33,11 @@ struct Contact: Codable {
     }
 }
 
+extension Contact: Equatable {
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 
 
