@@ -24,7 +24,7 @@ final class ContactDetailPresenter: NSObject {
     init(contact: Contact) {
         self.contact = contact
         super.init()
-//        setupSections()
+        setupSections()
     }
     
     //MARK: - Internal functions
@@ -38,13 +38,16 @@ final class ContactDetailPresenter: NSObject {
     
     //MARK: - Private functions
     private func setupSections() {
-        if let _ = contact.phone.home {
+        if let homePhone = contact.phone.home,
+           !homePhone.isEmpty {
             sections.append(.homePhone)
         }
-        if let _ = contact.phone.mobile {
+        if let mobilePhone = contact.phone.mobile,
+           !mobilePhone.isEmpty {
             sections.append(.mobilePhone)
         }
-        if let _ = contact.phone.work {
+        if let workPhone = contact.phone.work,
+           !workPhone.isEmpty {
             sections.append(.workPhone)
         }
         sections.append(contentsOf: [.address, .birthdate, .email])
@@ -66,10 +69,22 @@ extension ContactDetailPresenter: UITableViewDataSource {
         switch section {
         case .summary:
             return configureDetailSummaryCell(tableView, indexPath: indexPath)
-        default:
-            print("cosita")
+        case .homePhone:
+            let phone = contact.phone.home ?? ""
+            return configureInformationCell(tableView, indexPath: indexPath, title: "PHONE", information: phone, hint: "Home")
+        case .mobilePhone:
+            let phone = contact.phone.mobile ?? ""
+            return configureInformationCell(tableView, indexPath: indexPath, title: "PHONE", information: phone, hint: "Mobile")
+        case .workPhone:
+            let phone = contact.phone.work ?? ""
+            return configureInformationCell(tableView, indexPath: indexPath, title: "PHONE", information: phone, hint: "Work")
+        case .address:
+            return configureInformationCell(tableView, indexPath: indexPath, title: "ADDRESS", information: "\(contact.address.street) \(contact.address.city),  \(contact.address.state) \(contact.address.zipCode),  \(contact.address.country.rawValue)")
+        case .birthdate:
+            return configureInformationCell(tableView, indexPath: indexPath, title: "BIRTHDATE", information: contact.birthdate)
+        case .email:
+            return configureInformationCell(tableView, indexPath: indexPath, title: "EMAIL", information: contact.emailAddress)
         }
-        return UITableViewCell()
     }
     
     private func configureDetailSummaryCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
@@ -78,6 +93,14 @@ extension ContactDetailPresenter: UITableViewDataSource {
         }
         let company = contact.companyName ?? ""
         cell.configureCell(name: contact.name, company: company, profileImagePath: contact.largeImageURL)
+        return cell
+    }
+    
+    private func configureInformationCell(_ tableView: UITableView, indexPath: IndexPath, title: String, information: String, hint: String? = nil) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactDetailItemTableViewCell.reuseIdentifier) as? ContactDetailItemTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configureCell(title: title, information: information, hint: hint)
         return cell
     }
 }

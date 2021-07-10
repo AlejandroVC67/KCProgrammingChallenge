@@ -31,7 +31,6 @@ final class ContactDetailSummaryTableViewCell: UITableViewCell {
         }
         
         enum SeparatorLine {
-            static let height: CGFloat = 1
             static let padding: UIEdgeInsets = .init(top: 20, left: 0, bottom: 0, right: 0)
         }
     }
@@ -61,12 +60,7 @@ final class ContactDetailSummaryTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var separatorLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    private let separatorLine = SeparatorLineView()
     
     func configureCell(name: String, company: String, profileImagePath: String) {
         profileImageView.downloadImage(from: profileImagePath)
@@ -112,7 +106,6 @@ final class ContactDetailSummaryTableViewCell: UITableViewCell {
         let constraints = [separatorLine.topAnchor.constraint(equalTo: companyLabel.bottomAnchor, constant: Constants.SeparatorLine.padding.top),
                            separatorLine.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
                            separatorLine.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
-                           separatorLine.heightAnchor.constraint(equalToConstant: Constants.SeparatorLine.height),
                            separatorLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)]
         
         NSLayoutConstraint.activate(constraints)
