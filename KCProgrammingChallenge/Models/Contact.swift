@@ -39,5 +39,11 @@ extension Contact: Equatable {
     }
 }
 
+extension Array where Element == Contact {
+    mutating func sortByName() {
+        self.sort(by: { $0.name < $1.name })
+    }
+}
+
 
 
