@@ -12,7 +12,7 @@ enum ServiceError: Error, LocalizedError {
     case unableToParse
     case dataError
     
-    var errorDescription: String? {
+    var errorDescription: String {
         switch self {
         case .badUrl: return "Failed creating url path"
         case .unableToParse: return "Unable to parse response"

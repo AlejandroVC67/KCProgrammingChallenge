@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 final class ContactListTableViewController: UITableViewController {
     // MARK: - Variables
@@ -60,6 +61,6 @@ extension ContactListTableViewController: ContactListDelegate {
     }
     
     func handleError(_ error: ServiceError) {
-        // TODO: Implement logic.
+        os_log(.error, log: .default, "ContactListTableViewController \(error.errorDescription)")
     }
 }
