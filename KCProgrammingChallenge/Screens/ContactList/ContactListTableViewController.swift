@@ -34,6 +34,7 @@ final class ContactListTableViewController: UITableViewController {
         tableView.backgroundColor = .background
         tableView.dataSource = presenter
         tableView.delegate = presenter
+        tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(ContactListTableViewCell.self, forCellReuseIdentifier: ContactListTableViewCell.reuseIdentifier)

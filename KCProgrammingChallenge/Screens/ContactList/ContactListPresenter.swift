@@ -76,7 +76,8 @@ extension ContactListPresenter: UITableViewDataSource {
     
     private func configureFavoriteContactsCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let contact = favoriteContacts[indexPath.row]
-        return getContactsCell(tableView: tableView, indexPath: indexPath, contact: contact)
+        let isLast = indexPath.row + 1 == favoriteContacts.count
+        return getContactsCell(tableView: tableView, indexPath: indexPath, contact: contact, hideSeparator: isLast)
     }
     
     private func configureUnfavoriteContactsCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
@@ -84,13 +85,13 @@ extension ContactListPresenter: UITableViewDataSource {
         return getContactsCell(tableView: tableView, indexPath: indexPath, contact: contact)
     }
     
-    private func getContactsCell(tableView: UITableView, indexPath: IndexPath, contact: Contact) -> UITableViewCell {
+    private func getContactsCell(tableView: UITableView, indexPath: IndexPath, contact: Contact, hideSeparator: Bool = false) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactListTableViewCell.reuseIdentifier, for: indexPath) as? ContactListTableViewCell else {
             return UITableViewCell()
         }
         
         let company = contact.companyName ?? ""
-        cell.configureCell(name: contact.name, company: company, isFavorite: contact.isFavorite, thumbnailPath: contact.smallImageURL)
+        cell.configureCell(name: contact.name, company: company, isFavorite: contact.isFavorite, thumbnailPath: contact.smallImageURL, hideSeparator: hideSeparator)
         return cell
     }
 }

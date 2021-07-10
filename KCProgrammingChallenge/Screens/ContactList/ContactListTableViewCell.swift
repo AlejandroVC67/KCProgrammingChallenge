@@ -12,7 +12,7 @@ final class ContactListTableViewCell: UITableViewCell {
     // MARK: - Constants
     private enum Constants {
         enum ThumbnailImageView {
-            static let padding: UIEdgeInsets = .init(top: 24, left: 12, bottom: -24, right: 0)
+            static let padding: UIEdgeInsets = .init(top: 24, left: 12, bottom: 0, right: 0)
             static let dimensions: CGFloat = 50
             static let image = UIImage(named: "thumbnailPlaceholder")
         }
@@ -33,6 +33,10 @@ final class ContactListTableViewCell: UITableViewCell {
             static let padding: UIEdgeInsets = .init(top: 2, left: 0, bottom: 0, right: 0)
             static let textColor: UIColor? = .secundaryContent
             static let font: UIFont = UIFont.systemFont(ofSize: 12, weight: .light)
+        }
+        
+        enum SeparatorLine {
+            static let padding: UIEdgeInsets = .init(top: 24, left: 12, bottom: 0, right: -12)
         }
     }
     
@@ -67,27 +71,31 @@ final class ContactListTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let separatorLine = SeparatorLineView()
+    
     //MARK: - Internal function
-    func configureCell(name: String, company: String?, isFavorite: Bool, thumbnailPath: String) {
+    func configureCell(name: String, company: String?, isFavorite: Bool, thumbnailPath: String, hideSeparator: Bool) {
         selectionStyle = .none
-        populateCell(name: name, company: company, isFavorite: isFavorite, thumbnailPath: thumbnailPath)
+        populateCell(name: name, company: company, isFavorite: isFavorite, thumbnailPath: thumbnailPath, hideSeparator: hideSeparator)
         addContent(isFavorite: isFavorite)
     }
     
     // MARK: - Private functions
-    private func populateCell(name: String, company: String?, isFavorite: Bool, thumbnailPath: String) {
+    private func populateCell(name: String, company: String?, isFavorite: Bool, thumbnailPath: String, hideSeparator: Bool) {
         nameLabel.text = name
         companyLabel.text = company
+        separatorLine.isHidden = hideSeparator
         thumbnailImageView.downloadImage(from: thumbnailPath)
     }
     
     private func addContent(isFavorite: Bool) {
-        contentView.addSubviews([thumbnailImageView, nameLabel, companyLabel, starImageView])
+        contentView.addSubviews([thumbnailImageView, nameLabel, companyLabel, starImageView, separatorLine])
         starImageView.isHidden = !isFavorite
         setupThumbnailImageViewConstraints()
         setupStarImageViewConstraints()
         nameLabelConstraints()
         companyLabelConstraints()
+        separatorLineConstraints()
     }
     
     private func setupThumbnailImageViewConstraints() {
@@ -95,8 +103,7 @@ final class ContactListTableViewCell: UITableViewCell {
                            thumbnailImageView.heightAnchor.constraint(equalTo: thumbnailImageView.widthAnchor, multiplier: thumbnailImageView.aspectRatio),
                            thumbnailImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
                            thumbnailImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.ThumbnailImageView.padding.left),
-                           thumbnailImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: Constants.ThumbnailImageView.padding.top),
-                           thumbnailImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: Constants.ThumbnailImageView.padding.bottom)
+                           thumbnailImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: Constants.ThumbnailImageView.padding.top)
         ]
         
         NSLayoutConstraint.activate(constraints)
@@ -124,6 +131,15 @@ final class ContactListTableViewCell: UITableViewCell {
                            companyLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
                            companyLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor)
         ]
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    private func separatorLineConstraints() {
+        let constraints = [separatorLine.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: Constants.SeparatorLine.padding.top),
+                           separatorLine.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.SeparatorLine.padding.left),
+                           separatorLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.SeparatorLine.padding.right),
+                           separatorLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)]
+        
         NSLayoutConstraint.activate(constraints)
     }
 }
