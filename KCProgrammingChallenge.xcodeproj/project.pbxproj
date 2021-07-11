@@ -16,12 +16,12 @@
 		BC139B82269940A600DD98E4 /* ContactDetailSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B81269940A600DD98E4 /* ContactDetailSummaryTableViewCell.swift */; };
 		BC139B8426994C9500DD98E4 /* ContactDetailItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B8326994C9500DD98E4 /* ContactDetailItemTableViewCell.swift */; };
 		BC139B8726994CCC00DD98E4 /* SeparatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B8626994CCC00DD98E4 /* SeparatorLineView.swift */; };
+		BC139B8B269BB15800DD98E4 /* ContactDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B8A269BB15800DD98E4 /* ContactDetailPresenterTests.swift */; };
 		BC3E3C702696687300A3D9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C6F2696687300A3D9AF /* AppDelegate.swift */; };
 		BC3E3C722696687300A3D9AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C712696687300A3D9AF /* SceneDelegate.swift */; };
 		BC3E3C742696687300A3D9AF /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C732696687300A3D9AF /* ContactListTableViewController.swift */; };
 		BC3E3C792696687800A3D9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3E3C782696687800A3D9AF /* Assets.xcassets */; };
 		BC3E3C7C2696687800A3D9AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3E3C7A2696687800A3D9AF /* LaunchScreen.storyboard */; };
-		BC3E3C872696687800A3D9AF /* KCProgrammingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C862696687800A3D9AF /* KCProgrammingChallengeTests.swift */; };
 		BC3E3CA326966B2F00A3D9AF /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CA226966B2F00A3D9AF /* Contact.swift */; };
 		BC3E3CA526966C1000A3D9AF /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CA426966C1000A3D9AF /* Phone.swift */; };
 		BC3E3CA726966C2800A3D9AF /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CA626966C2800A3D9AF /* Country.swift */; };
@@ -45,13 +45,6 @@
 			remoteGlobalIDString = BC3E3C6B2696687300A3D9AF;
 			remoteInfo = KCProgrammingChallenge;
 		};
-		BC3E3C8E2696687800A3D9AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC3E3C642696687300A3D9AF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BC3E3C6B2696687300A3D9AF;
-			remoteInfo = KCProgrammingChallenge;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +57,7 @@
 		BC139B81269940A600DD98E4 /* ContactDetailSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		BC139B8326994C9500DD98E4 /* ContactDetailItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailItemTableViewCell.swift; sourceTree = "<group>"; };
 		BC139B8626994CCC00DD98E4 /* SeparatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineView.swift; sourceTree = "<group>"; };
+		BC139B8A269BB15800DD98E4 /* ContactDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailPresenterTests.swift; sourceTree = "<group>"; };
 		BC3E3C6C2696687300A3D9AF /* KCProgrammingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCProgrammingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3E3C6F2696687300A3D9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC3E3C712696687300A3D9AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,9 +66,7 @@
 		BC3E3C7B2696687800A3D9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC3E3C7D2696687800A3D9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC3E3C822696687800A3D9AF /* KCProgrammingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCProgrammingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC3E3C862696687800A3D9AF /* KCProgrammingChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCProgrammingChallengeTests.swift; sourceTree = "<group>"; };
 		BC3E3C882696687800A3D9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC3E3C8D2696687800A3D9AF /* KCProgrammingChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCProgrammingChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3E3CA226966B2F00A3D9AF /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BC3E3CA426966C1000A3D9AF /* Phone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
 		BC3E3CA626966C2800A3D9AF /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -105,13 +97,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC3E3C8A2696687800A3D9AF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,6 +120,22 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		BC139B88269BB11700DD98E4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BC139B89269BB12400DD98E4 /* ContactDetail */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BC139B89269BB12400DD98E4 /* ContactDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BC139B8A269BB15800DD98E4 /* ContactDetailPresenterTests.swift */,
+			);
+			path = ContactDetail;
+			sourceTree = "<group>";
+		};
 		BC3E3C632696687300A3D9AF = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +150,6 @@
 			children = (
 				BC3E3C6C2696687300A3D9AF /* KCProgrammingChallenge.app */,
 				BC3E3C822696687800A3D9AF /* KCProgrammingChallengeTests.xctest */,
-				BC3E3C8D2696687800A3D9AF /* KCProgrammingChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 		BC3E3C852696687800A3D9AF /* KCProgrammingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				BC3E3C862696687800A3D9AF /* KCProgrammingChallengeTests.swift */,
+				BC139B88269BB11700DD98E4 /* Screens */,
 				BC3E3C882696687800A3D9AF /* Info.plist */,
 			);
 			path = KCProgrammingChallengeTests;
@@ -272,24 +272,6 @@
 			productReference = BC3E3C822696687800A3D9AF /* KCProgrammingChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BC3E3C8C2696687800A3D9AF /* KCProgrammingChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BC3E3C9C2696687800A3D9AF /* Build configuration list for PBXNativeTarget "KCProgrammingChallengeUITests" */;
-			buildPhases = (
-				BC3E3C892696687800A3D9AF /* Sources */,
-				BC3E3C8A2696687800A3D9AF /* Frameworks */,
-				BC3E3C8B2696687800A3D9AF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BC3E3C8F2696687800A3D9AF /* PBXTargetDependency */,
-			);
-			name = KCProgrammingChallengeUITests;
-			productName = KCProgrammingChallengeUITests;
-			productReference = BC3E3C8D2696687800A3D9AF /* KCProgrammingChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -303,10 +285,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					BC3E3C812696687800A3D9AF = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = BC3E3C6B2696687300A3D9AF;
-					};
-					BC3E3C8C2696687800A3D9AF = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = BC3E3C6B2696687300A3D9AF;
 					};
@@ -327,7 +305,6 @@
 			targets = (
 				BC3E3C6B2696687300A3D9AF /* KCProgrammingChallenge */,
 				BC3E3C812696687800A3D9AF /* KCProgrammingChallengeTests */,
-				BC3E3C8C2696687800A3D9AF /* KCProgrammingChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -343,13 +320,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BC3E3C802696687800A3D9AF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BC3E3C8B2696687800A3D9AF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,14 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC3E3C872696687800A3D9AF /* KCProgrammingChallengeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BC3E3C892696687800A3D9AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				BC139B8B269BB15800DD98E4 /* ContactDetailPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,11 +376,6 @@
 			isa = PBXTargetDependency;
 			target = BC3E3C6B2696687300A3D9AF /* KCProgrammingChallenge */;
 			targetProxy = BC3E3C832696687800A3D9AF /* PBXContainerItemProxy */;
-		};
-		BC3E3C8F2696687800A3D9AF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BC3E3C6B2696687300A3D9AF /* KCProgrammingChallenge */;
-			targetProxy = BC3E3C8E2696687800A3D9AF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -627,44 +585,6 @@
 			};
 			name = Release;
 		};
-		BC3E3C9D2696687800A3D9AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = KCProgrammingChallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alejandrovilla.KCProgrammingChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = KCProgrammingChallenge;
-			};
-			name = Debug;
-		};
-		BC3E3C9E2696687800A3D9AF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = KCProgrammingChallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alejandrovilla.KCProgrammingChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = KCProgrammingChallenge;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -691,15 +611,6 @@
 			buildConfigurations = (
 				BC3E3C9A2696687800A3D9AF /* Debug */,
 				BC3E3C9B2696687800A3D9AF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BC3E3C9C2696687800A3D9AF /* Build configuration list for PBXNativeTarget "KCProgrammingChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BC3E3C9D2696687800A3D9AF /* Debug */,
-				BC3E3C9E2696687800A3D9AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
