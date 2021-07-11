@@ -73,6 +73,7 @@ final class ContactDetailSummaryTableViewCell: UITableViewCell {
     
     //MARK: - Private functions
     private func addContent() {
+        contentView.backgroundColor = .background
         contentView.addSubviews([nameLabel, companyLabel, profileImageView, separatorLine])
         profileImageViewConstraints()
         nameLabelViewConstraints()

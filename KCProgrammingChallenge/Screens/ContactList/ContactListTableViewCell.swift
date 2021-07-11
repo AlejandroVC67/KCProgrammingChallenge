@@ -89,6 +89,7 @@ final class ContactListTableViewCell: UITableViewCell {
     }
     
     private func addContent(isFavorite: Bool) {
+        contentView.backgroundColor = .background
         contentView.addSubviews([thumbnailImageView, nameLabel, companyLabel, starImageView, separatorLine])
         starImageView.isHidden = !isFavorite
         setupThumbnailImageViewConstraints()
