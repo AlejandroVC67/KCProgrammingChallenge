@@ -15,7 +15,7 @@ final class ContactListPresenter: NSObject {
     }
     
     // MARK: - Variables
-    private var contacts: [Contact] = [] {
+    private(set) var contacts: [Contact] = [] {
         didSet {
             contacts.sortByName()
             let favorites = contacts.filter { $0.isFavorite }
