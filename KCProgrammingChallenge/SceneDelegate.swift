@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  KCProgrammingChallenge
 //
-//  Created by Alejandro Villa Cardenas - Ceiba Software on 7/07/21.
+//  Created by Alejandro Villa Cardenas
 //
 
 import UIKit
@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         self.window = UIWindow(windowScene: scene)
-        let navigationController = UINavigationController.init(rootViewController: ViewController())
+        let presenter = ContactListPresenter()
+        let navigationController = UINavigationController.init(rootViewController: ContactListTableViewController(presenter: presenter))
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
