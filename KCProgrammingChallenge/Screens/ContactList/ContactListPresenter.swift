@@ -22,13 +22,14 @@ final class ContactListPresenter: NSObject {
             let unfavorites = contacts.filter { !$0.isFavorite }
             favoriteContacts = favorites
             unfavoriteContacts = unfavorites
+            configureSections()
             delegate?.reloadData()
         }
     }
     private var favoriteContacts: [Contact] = []
     private var unfavoriteContacts: [Contact] = []
     
-    private let sections: [ContactListSections] = ContactListSections.allCases
+    private var sections: [ContactListSections] = []
     weak var delegate: ContactListDelegate?
     
     // MARK: - Functions
@@ -46,6 +47,16 @@ final class ContactListPresenter: NSObject {
     func updateList(contact: Contact) {
         contacts.removeAll(where: { $0.id == contact.id })
         contacts.append(contact)
+    }
+    
+    private func configureSections() {
+        sections.removeAll()
+        if !favoriteContacts.isEmpty {
+            sections.append(.favorite)
+        }
+        if !unfavoriteContacts.isEmpty {
+            sections.append(.unfavorite)
+        }
     }
 }
 
