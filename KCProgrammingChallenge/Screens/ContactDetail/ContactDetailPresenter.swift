@@ -66,25 +66,24 @@ extension ContactDetailPresenter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = sections[indexPath.section]
+        let information: String
         switch section {
         case .summary:
             return configureDetailSummaryCell(tableView, indexPath: indexPath)
         case .homePhone:
-            let phone = contact.phone.home ?? ""
-            return configureInformationCell(tableView, indexPath: indexPath, title: "PHONE", information: phone, hint: "Home")
+            information = contact.phone.home ?? ""
         case .mobilePhone:
-            let phone = contact.phone.mobile ?? ""
-            return configureInformationCell(tableView, indexPath: indexPath, title: "PHONE", information: phone, hint: "Mobile")
+            information = contact.phone.mobile ?? ""
         case .workPhone:
-            let phone = contact.phone.work ?? ""
-            return configureInformationCell(tableView, indexPath: indexPath, title: "PHONE", information: phone, hint: "Work")
+            information = contact.phone.work ?? ""
         case .address:
-            return configureInformationCell(tableView, indexPath: indexPath, title: "ADDRESS", information: "\(contact.address.street) \(contact.address.city),  \(contact.address.state) \(contact.address.zipCode),  \(contact.address.country.rawValue)")
+            information = "\(contact.address.street) \(contact.address.city),  \(contact.address.state) \(contact.address.zipCode),  \(contact.address.country.rawValue)"
         case .birthdate:
-            return configureInformationCell(tableView, indexPath: indexPath, title: "BIRTHDATE", information: contact.birthdate)
+            information = contact.birthdate
         case .email:
-            return configureInformationCell(tableView, indexPath: indexPath, title: "EMAIL", information: contact.emailAddress)
+            information = contact.emailAddress
         }
+        return configureInformationCell(tableView, indexPath: indexPath, title: section.title, information: information)
     }
     
     private func configureDetailSummaryCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
