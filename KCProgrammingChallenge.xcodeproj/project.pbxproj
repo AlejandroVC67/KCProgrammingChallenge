@@ -21,6 +21,8 @@
 		BC139B91269BB81A00DD98E4 /* ServiceFacadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B90269BB81A00DD98E4 /* ServiceFacadeTests.swift */; };
 		BC139B93269BB83C00DD98E4 /* ServiceFacadeMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B92269BB83C00DD98E4 /* ServiceFacadeMock.swift */; };
 		BC139B95269BB8A200DD98E4 /* ContactGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B94269BB8A200DD98E4 /* ContactGenerator.swift */; };
+		BC139B98269BCC1A00DD98E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC139B9A269BCC1A00DD98E4 /* Localizable.strings */; };
+		BC139B9C269BCD5E00DD98E4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC139B9B269BCD5E00DD98E4 /* StringExtension.swift */; };
 		BC3E3C702696687300A3D9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C6F2696687300A3D9AF /* AppDelegate.swift */; };
 		BC3E3C722696687300A3D9AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C712696687300A3D9AF /* SceneDelegate.swift */; };
 		BC3E3C742696687300A3D9AF /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3C732696687300A3D9AF /* ContactListTableViewController.swift */; };
@@ -66,6 +68,8 @@
 		BC139B90269BB81A00DD98E4 /* ServiceFacadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacadeTests.swift; sourceTree = "<group>"; };
 		BC139B92269BB83C00DD98E4 /* ServiceFacadeMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacadeMock.swift; sourceTree = "<group>"; };
 		BC139B94269BB8A200DD98E4 /* ContactGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGenerator.swift; sourceTree = "<group>"; };
+		BC139B99269BCC1A00DD98E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BC139B9B269BCD5E00DD98E4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		BC3E3C6C2696687300A3D9AF /* KCProgrammingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCProgrammingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3E3C6F2696687300A3D9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC3E3C712696687300A3D9AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				BC3E3C782696687800A3D9AF /* Assets.xcassets */,
 				BC3E3C7A2696687800A3D9AF /* LaunchScreen.storyboard */,
 				BC3E3C7D2696687800A3D9AF /* Info.plist */,
+				BC139B9A269BCC1A00DD98E4 /* Localizable.strings */,
 			);
 			path = KCProgrammingChallenge;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				BC3E3CBA2696B64000A3D9AF /* UIColorExtension.swift */,
 				BC3E3CBC2696B96100A3D9AF /* UIViewExtension.swift */,
 				BC139B742698023400DD98E4 /* UIImageViewExtension.swift */,
+				BC139B9B269BCD5E00DD98E4 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3E3C7C2696687800A3D9AF /* LaunchScreen.storyboard in Resources */,
+				BC139B98269BCC1A00DD98E4 /* Localizable.strings in Resources */,
 				BC3E3C792696687800A3D9AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +392,7 @@
 				BC3E3CB92696B3A900A3D9AF /* UITableViewCellExtension.swift in Sources */,
 				BC3E3CB62696B36A00A3D9AF /* ContactListTableViewCell.swift in Sources */,
 				BC3E3CB226966FB700A3D9AF /* HTTPMethods.swift in Sources */,
+				BC139B9C269BCD5E00DD98E4 /* StringExtension.swift in Sources */,
 				BC139B7E2698098E00DD98E4 /* ContactListSections.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +420,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BC139B9A269BCC1A00DD98E4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC139B99269BCC1A00DD98E4 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BC3E3C7A2696687800A3D9AF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

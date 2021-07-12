@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  KCProgrammingChallenge
+
+  Created by Alejandro Villa Cardenas
+  
+*/
+
+// MARK: - Contact List
+kc.contact.list.title = "Contacts";
+
+// MARK: - Contact Detail Section Titles
+kc.contact.detail.sections.phones.title = "PHONE";
+kc.contact.detail.sections.address.title = "ADDRESS";
+kc.contact.detail.sections.birthdate.title = "BIRTHDATE";
+kc.contact.detail.sections.email.title = "EMAIL";
+
+// MARK: - Contact Detail Section Hints
+kc.contact.detail.sections.phones.mobile.hint = "Mobile";
+kc.contact.detail.sections.phones.work.hint = "Work";
+kc.contact.detail.sections.phones.home.hint = "Home";
+
+// MARK: - Contact Detail Information Cell formats
+kc.contact.detail.sections.address.format = "%@ %@, %@ %@, %@";
+
+

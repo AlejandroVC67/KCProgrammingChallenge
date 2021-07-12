@@ -77,13 +77,13 @@ extension ContactDetailPresenter: UITableViewDataSource {
         case .workPhone:
             information = contact.phone.work ?? ""
         case .address:
-            information = "\(contact.address.street) \(contact.address.city),  \(contact.address.state) \(contact.address.zipCode),  \(contact.address.country.rawValue)"
+            information = String(format: "kc.contact.detail.sections.address.format".localized, contact.address.street, contact.address.city, contact.address.state, contact.address.zipCode, contact.address.country.rawValue)
         case .birthdate:
             information = contact.birthdate
         case .email:
             information = contact.emailAddress
         }
-        return configureInformationCell(tableView, indexPath: indexPath, title: section.title, information: information)
+        return configureInformationCell(tableView, indexPath: indexPath, title: section.title, information: information, hint: section.hint)
     }
     
     private func configureDetailSummaryCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {

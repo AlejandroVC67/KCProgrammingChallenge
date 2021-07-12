@@ -9,6 +9,11 @@ import UIKit
 import os.log
 
 final class ContactListTableViewController: UITableViewController {
+    // MARK: - Constants
+    private enum Constants {
+        static let title = "kc.contact.list.title".localized
+    }
+    
     // MARK: - Variables
     private let presenter: ContactListPresenter
     
@@ -28,7 +33,7 @@ final class ContactListTableViewController: UITableViewController {
     
     // MARK: - Private functions
     private func setupView() {
-        title = "Contacts"
+        title = Constants.title
     }
     
     private func setupTableView() {
